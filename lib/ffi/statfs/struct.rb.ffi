@@ -1,0 +1,26 @@
+# -*- encoding: utf-8 -*-
+
+module FFI
+
+  class StatFS::Struct < FFI::Struct
+    @@@
+    struct do |s|
+      s.name "struct statfs"
+      s.include "sys/statfs.h"
+      s.field :f_type,      :int
+      s.field :f_bsize,     :long
+      s.field :f_blocks,    :long
+      s.field :f_bfree,     :long
+      s.field :f_bavail,    :long
+      s.field :f_files,     :long
+      s.field :f_ffree,     :long
+      s.field :f_fsid,      :long
+      s.field :f_namelen,   :int
+      s.field :f_frsize,    :int
+      s.field :f_spare,     [:int, 5]
+    end
+    @@@
+  end
+
+
+end
